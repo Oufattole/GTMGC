@@ -199,3 +199,7 @@ class GTMGCForGraphRegression(GTMGCPretrainedModel):
             logits=decoder_outputs["logits"],
             labels=decoder_outputs["labels"],
         )
+
+    def embed(self, **inputs):
+        encoder_out = self.encoder(**inputs)
+        return encoder_out
